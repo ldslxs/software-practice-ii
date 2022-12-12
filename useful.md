@@ -1,5 +1,4 @@
 ```bash
-
 16962@JJia MINGW64 ~/OneDrive/桌面 (master)
 $ cd existing_git_repo
 bash: cd: existing_git_repo: No such file or directory
