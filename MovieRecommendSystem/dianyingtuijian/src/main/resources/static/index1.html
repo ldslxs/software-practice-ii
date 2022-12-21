@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<script src="/js/jquery.js"></script>
+		<script>
+			$().ready(function(){
+				$.ajax({
+				url:'http://localhost:8080/pro/findhot?counts=10',
+				type:'GET',
+				success: function (data) {
+					$.each(data, function (i, item) {
+							$("#con").append(" <p>"+item.name+" </p> <img src='"+item.imgUrl+"/poster.jpg' width='300' height='200' title='"+item.name+"' />");
+						});
+					}
+				});
+			});
+			$().ready(function(){
+				$.ajax({
+				url:'http://localhost:8080/pro/findrecentlyhot?yearmonth=201600',
+				type:'GET',
+				success: function (data) {
+					$.each(data, function (i, item) {
+							$("#con2").append(" <p>"+item.name+" </p> <img src='"+item.imgUrl+"/poster.jpg' width='300' height='200' title='"+item.name+"' />");
+						});
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+	<div><a href="echarts.html">Echarts显示</a> </div>
+	<h1>热门电影</h1>
+
+	<div id="con"></div>
+	<h1>近期好看电影</h1>
+	<div id="con2"></div>
+
+	</body>
+</html>
